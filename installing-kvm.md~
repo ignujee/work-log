@@ -1,0 +1,9 @@
+Installing qemu/kvm on debian
+=============================
+
+150  sudo apt -y install qemu-kvm libvirt-daemon  bridge-utils virtinst libvirt-daemon-system
+  151  sudo modprobe vhost_net
+  152  lsmod | grep vhost
+  153  echo vhost_net | sudo teaa -a /etc/modules 
+  154  sudo apt -y install virt-top libguestfs-tools libosinfo-bin  qemu-system virt-manager
+
