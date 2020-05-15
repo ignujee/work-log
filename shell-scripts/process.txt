@@ -1,0 +1,166 @@
+root         1     0  0 20:14 ?        00:00:02 /sbin/init
+root         2     0  0 20:14 ?        00:00:00 [kthreadd]
+root         3     2  0 20:14 ?        00:00:00 [ksoftirqd/0]
+root         5     2  0 20:14 ?        00:00:00 [kworker/0:0H]
+root         7     2  0 20:14 ?        00:00:11 [rcu_sched]
+root         8     2  0 20:14 ?        00:00:00 [rcu_bh]
+root         9     2  0 20:14 ?        00:00:00 [migration/0]
+root        10     2  0 20:14 ?        00:00:00 [lru-add-drain]
+root        11     2  0 20:14 ?        00:00:00 [watchdog/0]
+root        12     2  0 20:14 ?        00:00:00 [cpuhp/0]
+root        13     2  0 20:14 ?        00:00:00 [cpuhp/1]
+root        14     2  0 20:14 ?        00:00:00 [watchdog/1]
+root        15     2  0 20:14 ?        00:00:00 [migration/1]
+root        16     2  0 20:14 ?        00:00:00 [ksoftirqd/1]
+root        18     2  0 20:14 ?        00:00:00 [kworker/1:0H]
+root        19     2  0 20:14 ?        00:00:00 [cpuhp/2]
+root        20     2  0 20:14 ?        00:00:00 [watchdog/2]
+root        21     2  0 20:14 ?        00:00:00 [migration/2]
+root        22     2  0 20:14 ?        00:00:00 [ksoftirqd/2]
+root        24     2  0 20:14 ?        00:00:00 [kworker/2:0H]
+root        25     2  0 20:14 ?        00:00:00 [cpuhp/3]
+root        26     2  0 20:14 ?        00:00:00 [watchdog/3]
+root        27     2  0 20:14 ?        00:00:00 [migration/3]
+root        28     2  0 20:14 ?        00:00:00 [ksoftirqd/3]
+root        30     2  0 20:14 ?        00:00:00 [kworker/3:0H]
+root        31     2  0 20:14 ?        00:00:00 [kdevtmpfs]
+root        32     2  0 20:14 ?        00:00:00 [netns]
+root        33     2  0 20:14 ?        00:00:00 [khungtaskd]
+root        34     2  0 20:14 ?        00:00:00 [oom_reaper]
+root        35     2  0 20:14 ?        00:00:00 [writeback]
+root        36     2  0 20:14 ?        00:00:00 [kcompactd0]
+root        38     2  0 20:14 ?        00:00:00 [ksmd]
+root        39     2  0 20:14 ?        00:00:00 [khugepaged]
+root        40     2  0 20:14 ?        00:00:00 [crypto]
+root        41     2  0 20:14 ?        00:00:00 [kintegrityd]
+root        42     2  0 20:14 ?        00:00:00 [bioset]
+root        43     2  0 20:14 ?        00:00:00 [kblockd]
+root        44     2  0 20:14 ?        00:00:15 [kworker/2:1]
+root        47     2  0 20:14 ?        00:00:00 [devfreq_wq]
+root        48     2  0 20:14 ?        00:00:00 [watchdogd]
+root        49     2  0 20:14 ?        00:00:00 [kswapd0]
+root        50     2  0 20:14 ?        00:00:00 [vmstat]
+root        62     2  0 20:14 ?        00:00:00 [kthrotld]
+root        64     2  0 20:14 ?        00:00:06 [kworker/3:2]
+root        65     2  0 20:14 ?        00:00:00 [ipv6_addrconf]
+root        93     2  0 20:14 ?        00:00:00 [acpi_thermal_pm]
+root       105     2  0 20:14 ?        00:00:00 [ata_sff]
+root       133     2  0 20:14 ?        00:00:00 [scsi_eh_0]
+root       134     2  0 20:14 ?        00:00:00 [scsi_tmf_0]
+root       135     2  0 20:14 ?        00:00:00 [scsi_eh_1]
+root       136     2  0 20:14 ?        00:00:00 [scsi_tmf_1]
+root       138     2  0 20:14 ?        00:00:00 [bioset]
+root       139     2  0 20:14 ?        00:00:00 [bioset]
+root       142     2  0 20:14 ?        00:00:02 [kworker/0:2]
+root       144     2  0 20:14 ?        00:00:00 [kworker/0:1H]
+root       145     2  0 20:14 ?        00:00:00 [kworker/2:1H]
+root       146     2  0 20:14 ?        00:00:00 [kworker/3:1H]
+root       149     2  0 20:14 ?        00:00:00 [kworker/1:1H]
+root       177     2  0 20:14 ?        00:00:00 [kworker/u9:0]
+root       188     2  0 20:14 ?        00:00:00 [jbd2/sda7-8]
+root       189     2  0 20:14 ?        00:00:00 [ext4-rsv-conver]
+root       224     1  0 20:14 ?        00:00:01 /lib/systemd/systemd-journald
+root       229     2  0 20:14 ?        00:00:00 [kauditd]
+root       237     1  0 20:14 ?        00:00:01 /lib/systemd/systemd-udevd
+root       271     2  0 20:14 ?        00:00:00 [irq/125-mei_me]
+root       298     2  0 20:14 ?        00:00:00 [cfg80211]
+root       302     2  0 20:14 ?        00:00:00 [hci0]
+root       303     2  0 20:14 ?        00:00:00 [hci0]
+root       305     2  0 20:14 ?        00:00:00 [kworker/u9:2]
+root       306     2  0 20:14 ?        00:00:00 [i915/signal:0]
+root       307     2  0 20:14 ?        00:00:00 [i915/signal:1]
+root       308     2  0 20:14 ?        00:00:00 [i915/signal:2]
+root       309     2  0 20:14 ?        00:00:00 [i915/signal:4]
+systemd+   393     1  0 20:14 ?        00:00:00 /lib/systemd/systemd-timesyncd
+message+   495     1  0 20:15 ?        00:00:11 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+root       498     1  0 20:15 ?        00:00:00 /usr/lib/accountsservice/accounts-daemon
+root       500     1  0 20:15 ?        00:00:00 /lib/systemd/systemd-logind
+root       504     1  0 20:15 ?        00:00:00 /usr/sbin/cron -f
+root       505     1  9 20:15 ?        00:11:37 /usr/sbin/NetworkManager --no-daemon
+root       508     1  0 20:15 ?        00:00:00 /usr/lib/bluetooth/bluetoothd
+avahi      509     1  0 20:15 ?        00:00:00 avahi-daemon: running [debian-sonnet.local]
+rtkit      510     1  0 20:15 ?        00:00:00 /usr/lib/rtkit/rtkit-daemon
+root       511     1  0 20:15 ?        00:00:00 /usr/sbin/rsyslogd -n
+avahi      520   509  0 20:15 ?        00:00:00 avahi-daemon: chroot helper
+root       521     1  0 20:15 ?        00:00:00 /usr/sbin/irqbalance --foreground
+root       522     1  0 20:15 ?        00:00:00 /usr/sbin/ModemManager
+root       563     1  0 20:15 ?        00:00:01 /usr/lib/policykit-1/polkitd --no-debug
+root       632     1  0 20:15 ?        00:00:00 php-fpm: master process (/etc/php/7.4/fpm/php-fpm.conf)
+mongodb    635     1  0 20:15 ?        00:00:59 /usr/bin/mongod --unixSocketPrefix=/run/mongodb --config /etc/mongodb.conf
+root       638     1  0 20:15 ?        00:00:01 /usr/bin/containerd
+root       640     1  0 20:15 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+root       658     1  0 20:15 ?        00:00:00 /usr/sbin/lightdm
+redis      667     1  0 20:15 ?        00:00:11 /usr/bin/redis-server 127.0.0.1:6379
+root       681   658  1 20:15 tty7     00:02:05 /usr/lib/xorg/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+root       760     1  0 20:16 ?        00:00:03 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+mysql      762     1  0 20:16 ?        00:00:09 /usr/sbin/mysqld
+root       768     1  0 20:16 ?        00:00:00 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+www-data   769   768  0 20:16 ?        00:00:00 nginx: worker process
+www-data   770   768  0 20:16 ?        00:00:00 nginx: worker process
+www-data   771   768  0 20:16 ?        00:00:00 nginx: worker process
+www-data   772   768  0 20:16 ?        00:00:00 nginx: worker process
+root       785     1  0 20:16 ?        00:00:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+www-data   864   632  0 20:17 ?        00:00:00 php-fpm: pool www
+www-data   865   632  0 20:17 ?        00:00:00 php-fpm: pool www
+gnukhata  1230     1  0 20:17 ?        00:00:02 /usr/bin/python /usr/bin/gkstart
+matrix-+  1300     1  0 20:17 ?        00:00:19 /opt/venvs/matrix-synapse/bin/python -m synapse.app.homeserver --config-path=/etc/matrix-synapse/homeserver.yaml --config-path=/etc/matrix-synapse/conf.d/
+root      1312   658  0 20:19 ?        00:00:00 lightdm --session-child 12 21
+tanzeem   1318     1  0 20:19 ?        00:00:00 /lib/systemd/systemd --user
+tanzeem   1319  1318  0 20:19 ?        00:00:00 (sd-pam)
+tanzeem   1335  1312  0 20:19 ?        00:00:00 /bin/sh /etc/xdg/xfce4/xinitrc -- /etc/X11/xinit/xserverrc
+tanzeem   1343  1318  0 20:19 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
+tanzeem   1388  1335  0 20:19 ?        00:00:00 /usr/bin/ssh-agent /usr/bin/im-launch startxfce4
+tanzeem   1405     1  0 20:19 ?        00:00:07 /usr/bin/ibus-daemon --daemonize --xim
+tanzeem   1408  1318  0 20:19 ?        00:00:00 /usr/lib/gvfs/gvfsd
+tanzeem   1423  1335  0 20:19 ?        00:00:01 xfce4-session
+tanzeem   1425  1405  0 20:19 ?        00:00:00 /usr/lib/ibus/ibus-dconf
+tanzeem   1426  1405  0 20:19 ?        00:00:01 /usr/lib/ibus/ibus-ui-gtk3
+tanzeem   1430     1  0 20:19 ?        00:00:04 /usr/lib/ibus/ibus-x11 --kill-daemon
+tanzeem   1433  1318  0 20:19 ?        00:00:00 /usr/lib/at-spi2-core/at-spi-bus-launcher
+tanzeem   1438  1433  0 20:19 ?        00:00:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+tanzeem   1440  1318  0 20:19 ?        00:00:01 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+tanzeem   1449  1405  0 20:19 ?        00:00:02 /usr/lib/ibus/ibus-engine-simple
+tanzeem   1455  1318  0 20:19 ?        00:00:00 /usr/lib/x86_64-linux-gnu/xfce4/xfconf/xfconfd
+tanzeem   1463  1318  0 20:19 ?        00:00:00 /usr/bin/gpg-agent --supervised
+tanzeem   1465  1423  0 20:19 ?        00:00:18 xfwm4 --display :0.0 --sm-client-id 2f4579446-34e1-4d71-b98a-602d367b3d7a
+tanzeem   1466  1423  0 20:19 ?        00:00:01 Thunar --sm-client-id 2c9044249-4e70-473d-8f71-2bb133422d6b --daemon
+tanzeem   1470  1423  0 20:19 ?        00:00:04 xfce4-panel --display :0.0 --sm-client-id 2388bc81f-6693-4466-a07e-a7e60382fd44
+tanzeem   1471  1318  0 20:19 ?        00:00:00 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+tanzeem   1472     1  0 20:19 ?        00:00:00 xfsettingsd --display :0.0 --sm-client-id 2b076fd69-6fb9-4e79-a334-b3c88b2082cc
+root      1479     1  0 20:19 ?        00:00:01 /usr/lib/udisks2/udisksd --no-debug
+root      1484     1  0 20:19 ?        00:00:05 /usr/lib/upower/upowerd
+tanzeem   1490  1423  0 20:19 ?        00:00:02 xfdesktop --display :0.0 --sm-client-id 2aa4e7370-0970-45a9-869f-45506acbeab6
+tanzeem   1491  1318  0 20:19 ?        00:00:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+tanzeem   1507  1318  0 20:19 ?        00:00:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
+tanzeem   1512  1318  0 20:19 ?        00:00:00 /usr/lib/gvfs/gvfs-goa-volume-monitor
+tanzeem   1519  1423  9 20:19 ?        00:11:08 /usr/lib/firefox-esr/firefox-esr --sm-client-id 2dbca823b-3b66-4fce-98ea-fa294663f3f6
+tanzeem   1520  1423  0 20:19 ?        00:00:15 atril --sm-client-id 295fd2649-b3ea-4e5d-97a2-c9fd9e62e034 --sm-client-state-file /home/tanzeem/.config/session-state/atril-1587208801.desktop
+tanzeem   1523  1423  0 20:19 ?        00:00:04 mate-terminal --sm-client-id 282406e25-9aeb-4a9e-8eb1-407e77da3735 --sm-client-state-file /home/tanzeem/.config/session-state/mate-terminal-1587208801.desktop
+tanzeem   1524  1318  0 20:19 ?        00:00:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+tanzeem   1528  1470  0 20:19 ?        00:00:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-1.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libsystray.so 6 20971563 systray Notification Area Area where notification icons appear
+tanzeem   1532  1470  0 20:19 ?        00:00:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-1.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libactions.so 2 20971564 actions Action Buttons Log out, lock or other system actions
+tanzeem   1538  1318  0 20:19 ?        00:00:00 /usr/lib/gvfs/gvfsd-metadata
+tanzeem   1543  1523  0 20:19 pts/1    00:00:00 bash
+tanzeem   1544  1318  0 20:19 ?        00:00:00 /usr/lib/dconf/dconf-service
+tanzeem   1546  1318  0 20:19 ?        00:00:00 /usr/lib/gvfs/gvfsd-trash --spawner :1.6 /org/gtk/gvfs/exec_spaw/0
+tanzeem   1561  1470  0 20:19 ?        00:00:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-1.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libnotes.so 16 20971568 xfce4-notes-plugin Notes Ideal for your quick notes
+tanzeem   1572  1318  0 20:19 ?        00:00:00 /usr/lib/atril/atrild
+tanzeem   1602     1  0 20:19 ?        00:00:00 /usr/lib/x86_64-linux-gnu/webkit2gtk-4.0/WebKitNetworkProcess 15
+tanzeem   1640  1318  0 20:19 ?        00:00:00 /usr/bin/mate-settings-daemon
+tanzeem   1650  1423  0 20:19 ?        00:00:00 light-locker
+tanzeem   1662  1423  0 20:19 ?        00:00:00 nm-applet
+tanzeem   1685     1  0 20:19 ?        00:00:35 /usr/bin/pulseaudio --start --log-target=syslog
+tanzeem   1768  1318  0 20:21 ?        00:00:00 /usr/lib/x86_64-linux-gnu/gconf/gconfd-2
+tanzeem   1953  1543  0 20:34 pts/1    00:00:03 bash
+tanzeem   4333     1  0 20:49 ?        00:00:08 xfce4-terminal
+tanzeem   4344  4333  0 20:49 pts/0    00:00:00 bash
+root      7259     2  0 21:09 ?        00:00:01 [kworker/1:2]
+root     11554     2  0 21:39 ?        00:00:01 [kworker/0:0]
+root     12188     2  0 21:43 ?        00:00:02 [kworker/u8:1]
+root     13768     2  0 21:54 ?        00:00:00 [kworker/2:2]
+root     15902     2  0 22:09 ?        00:00:00 [kworker/1:0]
+root     16071     2  0 22:10 ?        00:00:00 [kworker/u8:2]
+root     16531     2  0 22:13 ?        00:00:00 [kworker/3:0]
+root     16895     2  0 22:15 ?        00:00:00 [kworker/u8:0]
+root     17053     2  0 22:17 ?        00:00:00 [kworker/2:0]
+tanzeem  17296  1953  0 22:18 pts/1    00:00:00 sleep 3

@@ -1,0 +1,9 @@
+C
+C
+How many processes are currently running on your system? Use ps and wc, the first line of output oF 
+ps is not a process!
+
+
+
+===================================================
+ps -ef |grep -v "ps -ef" | grep -v UID | wc -l 

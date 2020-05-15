@@ -1,0 +1,154 @@
+======================
+Writing shell programs
+======================
+
+Conditional statements
+
+************
+if construct
+************
+
+`if TEST-COMMANDS; then CONSEQUENT-COMMANDS; fi`
+
+- The TEST-COMMAND list is executed, and if its return status is zero, the CONSEQUENT-COMMANDS list is executed.
+
+- The return status is the exit status of the last command executed,
+  or zero if no condition tested true.
+
+The TEST-COMMAND often involves numerical or string comparison tests, but it can also be any command that returns a status of zero when it succeeds and some other status when it fails.
+
+Unary expressions are often used to examine the status of a file. If the FILE argument to one of the primaries is of the form /dev/fd/N, then file descriptor "N" is checked. stdin, stdout and stderr and their respective file descriptors may
+also be used for tests.
+
+if: PrimaryExpressions used with if
+------------------------------------
+
+[-a|e FILE] : True if file exists
+[-b FILE]   : True if file exists and is a block special file
+[-c FILE]   : True if file exists and is a character special file
+[-d FILE]   : True if file exists and is a directory
+
+[-g FILE]   : True if file exists and its SGID bit is set
+[-h FILE]   : True if file exists and is a symbolic link
+[-k FILE]   : True if file exists and its sticky bit is set
+[-p FILE]   : True if file exists and is a named pipe (FIFO)
+
+[-r FILE]   : True if file exists and is readable
+[-s FILE]   : True if file exists and has a size greater than zero
+[-t FD]     : True if file descriptor FD is open and refers to a terminal
+[-u FILE]   : True if FILE exists and its SUID -`set user id` bit is set
+
+[-w FILE]   : True if FILE exists and is writeable
+[-x FILE]   : True if FILE exists and is executable
+
+[-O FILE]   : True if FILE exists and is owned by the effective user id
+[-G file]   : True if FILE exists and is owned by the effective group id
+[-L FILE]   : True if FILE exists and is a symbolic link
+[-N FILE]   : True if FILE exists and is has been modified since last read
+[-S FILE]   : True if FILE exists and is a socket
+
+[FILE1 -nt FILE2]  : True if FILE1 has been changed more recently than FILE2,
+                    or if FILE1 exists and FILE2 doesn't.
+		   
+[FILE1 -ot FILE2]  : True if FILE1 is older than FILE2 or if FILE2 exists and FILE1 doesnt
+
+[FILE1 -ef FILE2]  : True if FILE1 and FILE2 refer to the same device and inode numbers
+
+[-o OPTIONNAME]    : True if shelloption is enabled
+
+[-z STRING]        : True if the length of STRING is zero
+
+[-n STRING] or [STRING] : True if the length of STRING is non-zero
+
+[STRING1 == STRING2] : True if the strings are equal. '=' may be used in strict POSIX compliance.
+
+[STRING1 != STRING2] : True if the strings are not equal.
+
+[STRING1 < STRING2]  : True if the STRING1 sorts "lexicographically before" STRING2 in the current locale
+
+[STRING1 > STRING2]  : True if the STRING1 sorts "lexicographically after" STRING2 in the current locale.
+
+[ARG1 op ARG2] : op is one of -eq, -gt, -lt, -ge, -le. ARG1 and ARG2 are integers. These arithmetic expressions return TRUE if ARG1 is equal to, greater than, less than, greater than or equal to, less than or equal to ARG2 respectively.
+
+Expressions may be combined using the following operators, in decreasing order or of precedence.
+
+[!EXPR] : True if EXPR is false
+
+[(EXPR)] : Returns the value of EXPR. This may be used to ocerride the normal precedence of operators.
+
+[EXPR1 -a EXPR2] : True if both EXPR1 and EXPR2 are true.
+
+[EXPR1 -o EXPR2] : True if either EXPR1 or EXPR2 is true.
+
+The [ (or test) built-in evaluates conditional expressions using a set of rules based on the number of arguments.
+
+It is important to remember that the then and fi are considered to be separated statements in the shell.
+Therefore, when issued on the command line, they are separated by a semi-colon.
+
+The CONSEQUENT-COMMANDS list that follows the then statement can be any valid UNIX command,
+any executable program, any executable shell script or any shell statement, with the exception of the closing
+fi. It is important to remember that the then and fi are considered to be separated statements in the shell.
+Therefore, when issued on the command line, they are separated by a semi-colon
+
+::
+   
+   $ cat msgcheck.sh
+   #! /bin/bash
+
+   echo "This script checks the existence of the message files"
+   echo "Checking........"
+   if [ -f /var/log/messages ]
+   then
+    echo "/var/log/messages exist"
+
+   fi
+   echo
+   echo ".... done."
+
+::
+   $ ./msgcheck.sh 
+   This script checks the existence of the message files
+   Checking........
+   /var/log/messages exist
+
+   .... done.
+
+
+$ if [ -f /etc/profile ] ; then  echo "yes"; fi
+yes
+
+
+$ if [ 1 -eq 1 ] ; then print "yes"; fi
+
+Checking shell options
+----------------------
+
+if [ -o noclobber ] ; then echo ; echo "your files are protected
+against overwriting." ; echo ; fi
+your files are protected against overwriting.
+
+$ if [ $? -eq 0 ]
+> then echo "Good Job"
+> fi
+Good Job
+
+The following example demonstrates that TEST-COMMANDS might be any UNIX command that returns an exit status, and that if again returns an exit status of zero:
+
+$ if ! grep $USER /etc/passwd
+> then echo "Your account not managed locally"; fi
+tanzeem-deb:x:1000:1000:Tanzeem.deb,,,:/home/tanzeem-deb:/bin/bash
+tanzeem:x:1001:1001:Tanzeem MB,11,1111111,1111111,1111111:/home/tanzeem:/bin/bash
+
+this cn be done as follows also
+
+$ grep $USER /etc/passwd
+
+$ if [ $? -ne 0 ]; then echo "Not a local account"; fi
+
+tanzeem@debian-sonnet:~/shell-scripts$ num=`cat state.txt | wc -l`
+tanzeem@debian-sonnet:~/shell-scripts$ echo $num
+5
+tanzeem@debian-sonnet:~/shell-scripts$ if [ $num -ge 5 ]
+> then echo "Wrote atleast 5 lines,good"
+> fi
+Wrote atleast 5 lines,good

@@ -1,0 +1,719 @@
+date command
+============
+
+````
+date "+DATE: %m/%d/%y%nTIME: %H:%M:%S"
+
+Outputs the date and time in the following format:
+
+DATE: 02/08/01
+TIME: 16:44:55
+
+```
+Using –date option for displaying past dates:
+Date and time of 2 years ago.
+
+Command: 
+$date --date="2 year ago"
+Output: 
+Sat Oct 10 23:42:15 PDT 2015
+
+Date and time of 5 seconds ago.
+
+Command: 
+$date --date="5 sec ago"
+Output:
+
+Tue Oct 10 23:45:02 PDT 2017
+
+Date and time of previous day.
+
+Command: 
+$date --date="yesterday"
+Output: 
+Mon Oct  9 23:48:00 PDT 2017
+
+Date and time of 2 months ago.
+
+Command: 
+$date --date="2 month ago"
+Output: 
+Thu Aug 10 23:54:51 PDT 2017
+
+Date and time of 10 days ago.
+
+Command: 
+$date --date="10 day ago"
+Output: 
+Sat Sep 30 23:56:55 PDT 2017
+
+5:Using –date option for displaying future date:
+Date and time of upcoming particular week day.
+
+Command: 
+$date --date="next tue"
+Output: 
+Tue Oct 17 00:00:00 PDT 2017
+
+Date and time after two days.
+
+Command: 
+$date --date="2 day"
+Output: 
+Fri Oct 13 00:05:52 PDT 2017
+
+Date and time of next day.
+
+Command: 
+$date --date="tomorrow"
+Output: 
+Thu Oct 12 00:08:47 PDT 2017
+
+Date and time after 1 year on the current day.
+
+Command: 
+$date --date="1 year"
+Output: 
+Thu Oct 11 00:11:38 PDT 2018
+
+
+List of Format specifiers used with date command:
+
+%D: Display date as mm/dd/yy.       
+%d: Display the day of the month (01 to 31).       
+%a: Displays the abbreviated name for weekdays (Sun to Sat).
+%A: Displays full weekdays (Sunday to Saturday).
+%h: Displays abbreviated month name (Jan to Dec).
+%b: Displays abbreviated month name (Jan to Dec).
+%B: Displays full month name(January to December).
+%m: Displays the month of year (01 to 12).
+%y: Displays last two digits of the year(00 to 99).
+%Y: Display four-digit year. 
+%T: Display the time in 24 hour format as HH:MM:SS.
+%H: Display the hour.
+%M: Display the minute.
+%S: Display the seconds.
+
+$date +%[format-option]
+
+Examples:
+
+Command: 
+$date "+%D"
+Output: 
+10/11/17
+Command: 
+$date "+%D %T"
+Output: 
+10/11/17 16:13:27
+Command: 
+$date "+%Y-%m-%d"
+Output: 
+2017-10-11
+
+Command: 
+$date "+%Y-%m-%d"
+Output: 
+2017-10-11
+Command: 
+$date "+%Y/%m/%d"
+Output: 
+2017/10/11
+Command: 
+$date "+%A %B %d %T %y"
+Output: 
+Thursday October 07:54:29 17
+
+cut command
+===========
+
+- for cutting out the sections from each line of files and writing the result to standard output.
+- It can be used to cut parts of a line by byte position, character and field.
+- Basically the cut command slices a line and extracts the text.
+- It is necessary to specify option with command otherwise it gives error.
+- If more than one file name is provided then data from each file is not precedes by its file name. 
+
+  ``cut OPTION... [FILE]...``
+
+Let us consider two files having name `state.txt` and `capital.txt` contains 5 names of the Indian states and capitals respectively.
+::
+   
+   $ cat state.txt
+   Andhra Pradesh
+   Arunachal Pradesh
+   Assam
+   Bihar
+   Chhattisgarh
+
+
+cut bytes -b option
+-------------------
+
+List without ranges
+$ cut -b 1,2,3 state.txt
+And
+Aru
+Ass
+Bih
+Chh
+
+List with ranges
+$ cut -b 1-3,5-7 state.txt
+Andra
+Aruach
+Assm
+Bihr
+Chhtti
+
+In this, 1- indicate from 1st byte to end byte of a line
+$ cut -b 1- state.txt
+Andhra Pradesh
+Arunachal Pradesh
+Assam
+Bihar
+Chhattisgarh
+
+In this, -3 indicate from 1st byte to 3rd byte of a line
+$ cut -b -3 state.txt
+And
+Aru
+Ass
+Bih
+Chh
+
+cut columns -c option
+---------------------
+
+To cut by character use the -c option. This selects the characters given to the -c option. This can be a list of numbers separated comma or a range of numbers separated by hyphen(-). Tabs and backspaces are treated as a character. It is necessary to specify list of character numbers otherwise it gives error with this option.
+
+Syntax::
+  $cut -c [(k)-(n)/(k),(n)/(n)] filename
+
+Here,k denotes the starting position of the character and n denotes the ending position of the character in each line, if k and n are separated by “-” otherwise they are only the position of character in each line from the file taken as an input.
+
+::
+   $ cut -c 2,5,7 state.txt
+   nr
+   rah
+   sm
+   ir
+   hti
+
+::
+   $ cut -c 2,5,7 state.txt
+   nr
+   rah
+   sm
+   ir
+   hti
+
+Above cut command prints first seven characters of each line from the file.
+
+Cut uses a special form for selecting characters from beginning upto the end of the line:
+
+::
+   
+   $ cut -c 1- state.txt
+   Andhra Pradesh
+   Arunachal Pradesh
+   Assam
+   Bihar
+   Chhattisgarh
+
+Above command prints starting from first character to end. Here in command only starting
+position is specified and the ending position is omitted.
+::
+   
+   $ cut -c -5 state.txt
+   Andhr
+   Aruna
+   Assam
+   Bihar
+   Chhat
+
+Above command prints starting position to the fifth character. Here the starting position
+is omitted and the ending position is specified.
+
+3. -f (field):
+--------------
+
+- c option is useful for fixed-length lines.
+- Most unix files doesn’t have fixed-length lines.
+- To extract the useful information you need to cut by fields rather than columns.
+- List of the fields number specified must be separated by comma.
+- Ranges are not described with -f option.
+- cut uses `tab as a default field delimiter` but can also work with `other delimiter` by using `-d` option.
+
+Note: Space is not considered as delimiter in UNIX.
+
+Syntax:
+
+`$cut -d "delimiter" -f (field number) file.txt`
+
+Like in the file state.txt fields are separated by space if -d option is not used then it prints whole line:
+::
+   $ cut -f 1 state.txt
+   Andhra Pradesh
+   Arunachal Pradesh
+   Assam
+   Bihar
+   Chhattisgarh
+
+
+If -d option is used then it considered space as a field separator or delimiter:
+::
+   
+   $ cut -d " " -f 1 state.txt
+   Andhra
+   Arunachal
+   Assam
+   Bihar
+   Chhattisgarh
+
+Command prints field from first to fourth of each line from the file.
+Command::
+  
+  $ cut -d " " -f 1-4 state.txt
+  Output:
+  Andhra Pradesh
+  Arunachal Pradesh
+  Assam
+  Bihar
+  Chhattisgarh
+
+4. –complement: As the name suggests it complement the output. This option can be used in the combination with other options either with -f or with -c.
+
+::
+
+   $ cut --complement -d " " -f 1 state.txt
+   Pradesh
+   Pradesh
+   Assam
+   Bihar
+   Chhattisgarh
+
+   $ cut --complement -c 5 state.txt
+   Andha Pradesh
+   Arunchal Pradesh
+   Assa
+   Biha
+   Chhatisgarh
+
+
+5. –output-delimiter: By default the output delimiter is same as input delimiter that we specify in the cut with -d option. To change the output delimiter use the option –output-delimiter=”delimiter”.
+
+::
+   
+   $ cut -d " " -f 1,2 state.txt --output-delimiter='%'
+   Andhra%Pradesh
+   Arunachal%Pradesh
+   Assam
+   Bihar
+   Chhattisgarh
+
+Here cut command changes delimiter(%) in the standard output between the fields which is specified by using -f option .
+
+$ cat state.txt | cut -d ' ' -f 1 | sort -r
+Chhattisgarh
+Bihar
+Assam
+Arunachal
+Andhra
+
+priting environment variables
+=============================
+::
+   
+   env or printenv
+
+
+local variables
+===============
+
+Using the `set` built-in command without any options
+will display a list of all variables (including environment variables) and functions
+
+creating variables
+==================
+
+VARNAME="VALUE"
+VAR_NAME=INTVALUE
+VARNAME1="value"
+
+no space around equals
+
+print $VARNAME
+
+export name=value
+
+error if - is used in variable name
+
+reserved shell variables
+------------------------
+
+Variable name | Definition
+
+CDPATH : A colon-separated list of directories used as a search path for the cd built-in command.
+
+HOME : The current user's home directory; the default for the cd built-in. The value of this variable is
+also used by tilde expansion.
+
+IFS : A list of characters that separate fields; used when the shell splits words as part of expansion.
+
+MAIL : If this parameter is set to a file name and the MAILPATH variable is not set, Bash informs the
+user of the arrival of mail in the specified file.
+
+MAILPATH : A colon-separated list of file names which the shell periodically checks for new mail.
+
+OPTARG : The value of the last option argument processed by the getopts built-in.
+
+OPTIND : The index of the last option argument processed by the getopts built-in.
+
+PATH : A colon-separated list of directories in which the shell looks for commands.
+ 
+PS1 : The primary prompt string. The default value is "'\s-\v\$ '".
+
+PS2 : The secondary prompt string. The default value is "'> '".
+
+BASH Reserved Variables
+-----------------------
+
+MACHTYPE
+
+A string that fully describes the system type on which Bash is executing, in the
+
+HISTSIZE
+
+HOSTFILE
+
+DIRSTACK
+
+EUID
+
+UID
+
+LANG
+
+PPID - id of parent process of the current shell
+
+PWD
+
+RANDOM
+
+Special Parameters
+------------------
+
+$*
+
+Expands to the positional parameters, starting from one. When the expansion occurs within double quotes, it expands to a single word with the value of each parameter separated by the first character of the IFS special variable.
+
+$@
+
+Expands to the positional parameters, starting from one. When the expansion occurs within
+double quotes, each parameter expands to a separate word.
+
+$#
+
+Expands to the number of positional parameters in decimal.
+
+$?
+
+Expands to the exit status of the most recently executed foreground pipeline.
+
+$-
+
+A hyphen expands to the current option flags as specified upon invocation, by the set built-in command, or those set by the shell itself (such as the -i).
+
+$$
+
+Expands to the process ID of the shell.
+
+$!
+
+Expands to the process ID of the most recently executed background (asynchronous) command.
+
+$0
+
+Expands to the name of the shell or shell script.
+
+$_
+
+The underscore variable is set at shell startup and contains the absolute file name of the shell or
+script being executed as passed in the argument list. Subsequently, it expands to the last argument
+
+to the previous command, after expansion. It is also set to the full pathname of each command
+executed and placed in the environment exported to that command. When checking mail, this
+parameter holds the name of the mail file.
+
+
+NOTE:
+USE $@ instead of $* everywhere
+
+Quoting characters
+==================
+
+Escaping
+--------
+
+A lot of keys have special meanings in some context or other. Quoting is used to remove the special meaning
+of characters or words: quotes can disable special treatment for special characters, they can prevent reserved
+words from being recognized as such and they can disable parameter expansion.
+
+::
+   
+   tanzeem@debian-sonnet:~$ date=20200422
+   tanzeem@debian-sonnet:~$ echo $date
+   20200422
+   tanzeem@debian-sonnet:~$ echo \$date
+   $date
+
+
+Single quotes
+-------------
+
+Single quotes ('') are used to preserve the literal value of each character enclosed within the quotes. A single
+quote may not occur between single quotes, even when preceded by a backslash.
+
+tanzeem@debian-sonnet:~$ echo '$date'
+$date
+tanzeem@debian-sonnet:~$ echo '\$date'
+\$date
+tanzeem@debian-sonnet:~$ echo 'hi'
+hi
+
+
+Double quotes
+-------------
+
+Using double quotes the literal value of all characters enclosed is preserved, except for the dollar sign, the
+backticks (backward single quotes, ``) and the backslash.
+The dollar sign and the backticks retain their special meaning within the double quotes.
+The backslash retains its meaning only when followed by dollar, backtick, double quote, backslash or
+newline. Within double quotes, the backslashes are removed from the input stream when followed by one of
+these characters. Backslashes preceding characters that don't have a special meaning are left unmodified for
+processing by the shell interpreter.
+A double quote may be quoted within double quotes by preceding it with a backslash.
+
+tanzeem@debian-sonnet:~$ echo  "$date"
+20200422
+tanzeem@debian-sonnet:~$ echo "`date`"
+Tue Apr 21 22:25:49 IST 2020
+tanzeem@debian-sonnet:~$ echo "I'd say: \"Go for it!\""
+bash: !\: event not found
+tanzeem@debian-sonnet:~$ echo "I'd say: \"Go for it! \""
+I'd say: "Go for it! "
+tanzeem@debian-sonnet:~$ echo "\"
+> i will complete it here :)"
+"
+i will complete it here :)
+tanzeem@debian-sonnet:~$ 
+
+Command substituition
+---------------------
+::
+   echo $(ls -l)
+   echo `date`
+
+Arithmetic expansion
+--------------------
+
+$[expression]
+
+echo $[x=1,++x]
+
+Process substitution
+--------------------
+
+Process substitution is supported on systems that support named pipes (FIFOs) or the /dev/fd method of
+naming open files. It takes the form of
+<(LIST)
+or
+>(LIST)
+
+no space between the >,< or brackets
+otherwise the construct would be considered as a redirection
+
+Options
+=======
+
+Aliasing
+--------
+
+alias
+alias ..='cd ..'
+alias dh='df -h'
+unalias dh
+
+set
+set -o
+
+willy:~/test> set -o noclobber
+willy:~/test> touch test
+willy:~/test> date > test
+bash: test: cannot overwrite existing file
+willy:~/test> set +o noclobber
+willy:~/test> date > test
+
+The above example demonstrates the noclobber option, which prevents existing files from being
+overwritten by redirection operations
+
+The same goes for one-character options, for instance -u, which will
+treat unset variables as an error when set, and exits a non-interactive shell upon encountering such errors:
+willy:~> echo $VAR
+willy:~> set -u
+willy:~> echo $VAR
+bash: VAR: unbound variable
+This option is also useful for detecting incorrect content assignment to variables: the same error will also
+occur, for instance, when assigning a character string to a variable that was declared explicitly as one holding
+only integer values.
+
+set -o noglob
+
+prevents wildcards from expanding
+
+eg.
+
+tanzeem@debian-sonnet:~/shell-scripts$ ls *
+01-mysystem.sh     examples.txt~      process.txt           shell-commands.txt~
+02-positional.sh   mysystem.sh~       #shell-commands.rst#  state.txt
+02-positional.sh~  output_04_17_2020  shell-commands.rst
+examples.txt       process            shell-commands.rst~
+tanzeem@debian-sonnet:~/shell-scripts$ set -o noglob
+tanzeem@debian-sonnet:~/shell-scripts$ ls *
+ls: cannot access '*': No such file or directory
+tanzeem@debian-sonnet:~/shell-scripts$ set +o noglob
+tanzeem@debian-sonnet:~/shell-scripts$ ls *
+01-mysystem.sh     examples.txt~      process.txt           shell-commands.txt~
+02-positional.sh   mysystem.sh~       #shell-commands.rst#  state.txt
+02-positional.sh~  output_04_17_2020  shell-commands.rst
+examples.txt       process            shell-commands.rst~
+tanzeem@debian-sonnet:~/shell-scripts$ 
+
+Regular expressions
+===================
+
+. Matches any single character
+? The preceding item is optional and will be matched, at most, once.
+* The preceding item will be matched zero or more times.
++ The preceding item will be matched one or more times.
+{N} The preceding item will be matched exactly N times
+{N,} The preceding item will be matched N or more times.
+{N,M} The preceding item is matched at least N times, but no more than M times
+- represents the range if it's not first or last in a range or the endpoint of a range
+^ Matches the empty string at the beginning of a line; also represents the characters not in the range of a list
+$ Matches the empty string at the end of a line.
+\b Matches the empty string at the edge of a word.
+\B Matches the empty string provided it's not at the edge of a word
+\< Matches the empty string at the end of word
+
+Two regular expressions may be concatenated; the resulting regular expression
+matches any string formed by concatenating two substrings that respectively match the concatenated subexpressions.
+
+Two regular expressions may be joined by the infix operator "|"; the resulting regular expression matches any string matching either subexpression.
+
+Repetition takes precedence over concatenation, which in turn takes precedence over 
+
+grep
+----
+
+grep root /etc/passwd
+
+With the first command, user cathy displays the lines from /etc/passwd containing the string root.
+
+grep -n root /etc/passwd
+
+Then she displays the line numbers containing this search string.
+
+grep -v bash /etc/passwd| grep -v nologin
+
+With the third command she checks which users are not using bash, but accounts with the nologin shell are
+not displayed.
+
+grep -c /bin/false /etc/passwd
+
+Then she counts the number of accounts that have /bin/false as the shell.
+
+grep -i ps ~/.bash* |grep -v history 
+
+The last command displays the lines from all the files in her home directory starting with ~/.bash,
+excluding matches containing the string history, so as to exclude matches from ~/.bash_history which
+might contain the same string, in upper or lower cases. Note that the search is for the string "ps", and not for
+the command ps
+
+From the previous example, we now exclusively want to display lines starting with the string "root":
+
+grep ^root /etc/passwd
+
+If we want to see which accounts have no shell assigned whatsoever, we search for lines ending in ":":
+
+grep $: /etc/passwd
+
+To check that PATH is exported in ~/.bashrc, first select "export" lines and then search for lines starting
+with the string "PATH", so as not to display MANPATH and other possible paths:
+
+grep export ~/.bashrc | grep '\<PATH'
+
+If you want to find a string that is a separate word (enclosed by spaces), it is better use the -w, as in this
+example where we are displaying information for the root partition:
+
+Character classes
+-----------------
+
+- A bracket expression is a list of characters enclosed by "[" and "]".
+
+- It matches any single character in that list;
+  
+- if the first character of the list is the caret, "^", then it matches any character NOT in the list.
+
+For example, the
+regular expression "[0123456789]" matches any single digit.
+
+Within a bracket expression, a range expression consists of two characters separated by a hyphen.
+
+It matches any single character that sorts between the two characters, inclusive, using the locale's collating sequence and
+character set.
+
+For example, in the default C locale, "[a-d]" is equivalent to "[abcd]".
+
+Many locales sort characters in dictionary order, and in these locales "[a-d]" is typically not equivalent to "[abcd]"; it might be
+equivalent to "[aBbCcDd]", for example.
+
+To obtain the traditional interpretation of bracket expressions, you can use the C locale by setting the LC_ALL environment variable to the value "C".
+
+Certain  named  classes of characters are predefined within bracket expressions, as follows.  Their names are self
+       explanatory, and they are [:alnum:], [:alpha:], [:cntrl:], [:digit:], [:graph:], [:lower:], [:print:], [:punct:], [:space:],
+       [:upper:], and [:xdigit:].  For example, [[:alnum:]] means the character class of numbers and letters in the current locale.
+       In the C locale and ASCII character set encoding, this is the same as [0-9A-Za-z].  (Note that the brackets in  these  class
+       names  are  part of the symbolic names, and must be included in addition to the brackets delimiting the bracket expression.)
+       Most meta-characters lose their special meaning inside bracket expressions.  To include a literal ] place it  first  in  the
+       list.  Similarly, to include a literal ^ place it anywhere but first.  Finally, to include a literal - place it last.
+
+
+Use the "." for a single character match. If you want to get a list of all five-character English dictionary words
+starting with "c" and ending in "h" (handy for solving crosswords):
+
+grep '\<c...h\>' /usr/share/dict/words
+
+If you want to display lines containing the literal dot character, use the -F option to grep.
+
+For matching multiple characters, use the asterisk. This example selects all words starting with "c" and ending
+in "h" from the system's dictionary:
+
+grep '\<c.*h\>' /usr/share/dict/words
+
+If you want to find the literal asterisk character in a file or output, use single quotes.
+
+Pattern matching using bash features
+====================================
+
+the asterisk (*) and the question mark (?) match any string or any single character,
+respectively. Quote these special characters to match them literally:
+
+
+
+
+
+
+
+
+

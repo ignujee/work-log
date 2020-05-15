@@ -1,0 +1,15 @@
+#! /bin/bash
+
+# Find if the specified user exists in /usr/passwd
+
+grep ^tanzeem:.*/bin/bash$ /etc/passwd
+
+echo "if output is 0, user exists"
+
+echo $?
+echo
+
+grep ^cdit:.*/bin/bash$ /etc/passwd
+
+echo $?
+echo

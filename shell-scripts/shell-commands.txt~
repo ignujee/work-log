@@ -1,0 +1,7 @@
+date "+DATE: %m/%d/%y%nTIME: %H:%M:%S"
+
+Outputs the date and time in the following format:
+
+DATE: 02/08/01
+TIME: 16:44:55
+

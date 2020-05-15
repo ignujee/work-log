@@ -1,0 +1,12 @@
+#! /bin/bash
+
+echo "This script checks the existence of the message files"
+echo "Checking........"
+if [ -f /var/log/messages ]
+then
+    echo "/var/log/messages exist"
+
+fi
+echo
+echo ".... done."
+    
