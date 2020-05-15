@@ -10,3 +10,4 @@ Work From Home : Added Logs about
   - shell basics
   - grep
   - sed
+  - awk
