@@ -2,6 +2,7 @@ Installing and setting up GNU Emacs 27.1 on Debian 10
 =====================================================
 
 ::
+
   wget -c http://gnu.spinellicreations.com/emacs/emacs-27.1.tar.xz
   sudo chmod +x emacs-27.1.tar.xz 
   tar -xf emacs-27.1.tar.xz 
@@ -32,22 +33,22 @@ After that I updated the content of my `.emacs` file in my home directory to ena
 
 Content of my .emacs file
 -------------------------
-   
-(add-to-list 'load-path "/home/tanzeem/.emacs.d/auto-save-list")
+::   
+  (add-to-list 'load-path "/home/tanzeem/.emacs.d/auto-save-list")
 
-(setq inhibit-startup-message t
-      inhibit-startup-echo-area-message t)
+  (setq inhibit-startup-message t
+        inhibit-startup-echo-area-message t)
 
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+  (require 'web-mode)
+  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
 Restart GNU Emacs and you are done to use it for Web development.
 
