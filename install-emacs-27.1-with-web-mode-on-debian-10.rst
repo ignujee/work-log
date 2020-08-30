@@ -27,7 +27,9 @@ Download `web-mode.el` from `web-mode.org` website
 and move the `web-mode.el` file to a **directory inside** `~/.emacs.d`
 I used the directory **auto-save-list** which was already present after installation.
 
-`mv web-mode.el /home/tanzeem/.emacs.d/auto-save-list/`
+::
+
+  mv web-mode.el /home/tanzeem/.emacs.d/auto-save-list/
 
 After that I updated the content of my `.emacs` file in my home directory to enable web-mode
 Be sure to specify the load path directory explicitly and avoid using ~
