@@ -1,5 +1,5 @@
-Installing and setting up GNU Emacs 27.1 on Debian 10
-=====================================================
+Installing and setting up GNU Emacs 27.1 with web-mode on Debian 10
+===================================================================
 
 ::
 
