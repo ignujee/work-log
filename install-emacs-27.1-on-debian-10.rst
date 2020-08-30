@@ -30,10 +30,13 @@ I used the directory **auto-save-list** which was already present after installa
 `mv web-mode.el /home/tanzeem/.emacs.d/auto-save-list/`
 
 After that I updated the content of my `.emacs` file in my home directory to enable web-mode
+Be sure to specify the load path directory explicitly and avoid using ~
 
 Content of my .emacs file
 -------------------------
-::   
+
+::
+
   (add-to-list 'load-path "/home/tanzeem/.emacs.d/auto-save-list")
 
   (setq inhibit-startup-message t
